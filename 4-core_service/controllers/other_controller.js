@@ -1,9 +1,6 @@
-const Readings = require("../models/readings-model");
+
 const Patients = require("../models/patients-model");
-const Login = require("../models/login-model")
-const bcrypt = require("bcryptjs")
-const JWT = require("jsonwebtoken")
-const {nanoid} = require("nanoid")
+
 
 
 const getDocPats = async (req,res)=> {

@@ -2,7 +2,7 @@
 const Staff = require("../models/staff-model");
 const Login = require("../models/login-model")
 const bcrypt = require("bcryptjs")
-const JWT = require("jsonwebtoken")
+
 const {DocNurConversation} = require("../models/conversations-model")
 
 

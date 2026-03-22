@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const http = require('http');
 const {Server} = require('socket.io')
-const socketHandeler = require('./socker_handler.js')
+const socketHandeler = require('./sockets/socker_handler.js')
 require('dotenv').config();
 
 const url = process.env.DATABASE_URL ;

@@ -4,6 +4,7 @@ const Staff = require("../models/staff-model");
 const Login = require("../models/login-model")
 const {DocPatConversation} = require('../models/conversations-model')
 const Messages = require('../models/messages-model')
+const Appointment = require('../models/appointment-model')
 const bcrypt = require("bcryptjs")
 const JWT = require("jsonwebtoken")
 
@@ -97,6 +98,7 @@ const deletePatientById = async (req,res)=>{
        await Readings.deleteMany({device_id: patient.device_id})
        await DocPatConversation.deleteOne({conversation_id: `conv_${patient.patient_id}`})
        await Messages.deleteMany({conversation_id: `conv_${patient.patient_id}`})
+       await Appointment.deleteMany({patient_id: `${patient.patient_id}`})
        res.status(200).json({status: "success",data: null})
     }catch(err){
        res.status(400).json({status: "error",message: err.message})
